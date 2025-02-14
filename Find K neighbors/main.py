@@ -7,9 +7,8 @@ k = 3
 
 def kNearestNighboor(points , k):
     points = np.array(points)
-    n = len(points)
     results = []
-    for i in range(n):
+    for i in range(len(points)):
         distances = np.sqrt(np.sum((points[i] - points) ** 2 , axis = 1))
         nearestDist = np.partition(distances , k)[:k]
         nearstPointsIndcs = np.argpartition(distances , k)[:k]
@@ -26,3 +25,4 @@ plt.scatter(x , y , s=100)
 plt.plot(i , j , color ="black")
 
 plt.show()
+
